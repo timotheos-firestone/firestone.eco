@@ -1,0 +1,12 @@
+<div class="gallery-item {% if class %}{{class}}{% endif %}">
+{% if picture %}
+	<div><a {% if permalink %}href="{{ permalink }}"{% endif %}><img src="{{ get_url(path=picture) }}" alt="{{ title }}" /></a></div>
+{% elif emoji %}
+	<div><a {% if permalink %}href="{{ permalink }}"{% endif %}><span class="gallery-emoji">{{ emoji }}</span></a></div>
+{% else %}
+	<div><a {% if permalink %}href="{{ permalink }}"{% endif %}><q>{{ body }}</q></a></div>
+{% endif %}
+	<div>{% if permalink %}<a href="{{ permalink }}">{{ title }}</a>{% else %}{{ title }}{% endif %}</div>
+	<div>{{ body }}</div>
+</div>
+

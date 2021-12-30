@@ -1,0 +1,7 @@
+# Zola binaries should not be version-controlled. They should just be downloaded:
+zola
+zola.exe
+
+# The public directory is built from the other contents, so should not be version-controlled:
+public
+

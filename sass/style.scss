@@ -1,0 +1,655 @@
+/* Mushroom forest gallery theme by Timotheos Firestone */
+html, body
+{
+	width: 100%;
+	margin: 0px auto;
+	padding: 0px;
+}
+html
+{
+	max-width: 1024px;
+	background-image: url("background.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; /* Resize the background image to cover the entire container */
+	
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-top: 266px solid transparent;
+	border-bottom: 266px solid transparent;
+	border-left: 155px solid transparent;
+	border-right: 155px solid transparent;
+	-webkit-border-image: url("lace-frame-portrait.png") 266 155 /*fill*/ repeat; /* Webkit seems to fill by default */
+	-moz-border-image: url("lace-frame-portrait.png") 266 155 fill repeat; /* Old Firefox */
+	-o-border-image: url("lace-frame-portrait.png") 266 155 /*fill*/ repeat; /* Opera seems to fill by default */
+	border-image: url("lace-frame-portrait.png") 266 155 fill repeat;
+}
+
+@media screen and (min-width: 1550px)
+{
+	html
+	{
+		max-width: 85%;
+	}
+}
+@media screen and (min-width: 2550px)
+{
+	html
+	{
+		max-width: 2048px;
+	}
+}
+
+body > div
+{
+	position: relative;
+	margin: 0% -40px;
+	padding: 0%;
+}
+body > div:nth-child(2)
+{
+	top: -90px;
+}
+#banner
+{
+	top: -170px;
+}
+#footer
+{
+	top: 120px;
+}
+
+@media screen and (max-width: 850px)
+{
+	html
+	{
+		border-top: 200px solid transparent;
+		border-bottom: 200px solid transparent;
+		border-left: 116px solid transparent;
+		border-right: 116px solid transparent;
+	}
+	#banner
+	{
+		top: -127px;
+	}
+	#navigation
+	{
+		top: -67px;
+	}
+	#footer
+	{
+		top: 90px;
+	}
+}
+@media screen and (max-width: 650px)
+{
+	html
+	{
+		border-top: 133px solid transparent;
+		border-bottom: 133px solid transparent;
+		border-left: 77px solid transparent;
+		border-right: 77px solid transparent;
+	}
+	#banner
+	{
+		top: -85px;
+	}
+	#navigation
+	{
+		top: -45px;
+	}
+	#footer
+	{
+		top: 60px;
+	}
+}
+
+#navigation ul,
+#footer ul
+{
+	margin: 0px;
+	padding: 0px;
+}
+#navigation li,
+#footer li
+{
+	list-style: none;
+	text-align: center;
+	padding: 10px 20px;
+}
+#navigation li
+{
+	font-family: "GreatVibesRegular", "Great Vibes", "UnPilgi", cursive;
+	font-size-adjust: 0.396;
+	font-size: 1.8em;
+	line-height: 100%;
+}
+
+@media screen and (min-width: 650px)
+{
+	#navigation
+	{
+		border-bottom-width: 0px;
+	}
+	#navigation,
+	#footer
+	{
+		margin: 0px auto;
+		border-top-width: 0px;
+		display: table;
+		border-collapse: collapse;
+	}
+	#navigation ul,
+	#footer ul
+	{
+		padding: 0px;
+		display: table-row;
+	}
+	#navigation li,
+	#footer li
+	{
+		display: table-cell;
+		margin: auto;
+		vertical-align: middle;
+	}
+}
+
+@font-face
+{
+	font-family: 'GreatVibesRegular';
+	src: url('GreatVibesRegular.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+	/* Load using a system font first, then make it nicer, as per https://web.dev/font-display/ */
+	font-display: swap;
+}
+
+#banner h1
+{
+	width: 100%;
+	font-family: "GreatVibesRegular", "Great Vibes", "UnPilgi", "DancingScript", "Dancing Script", "Dancing Script Regular", cursive;
+	font-size-adjust: 0.396;
+	font-size: 3.7em;
+	font-weight: normal;
+	font-style: normal;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+#banner.index h1
+{
+	font-size: 5em;
+}
+@media screen and (max-width: 650px)
+{
+	#banner h1
+	{
+		font-size: 4em;
+	}
+}
+@media screen and (max-width: 550px)
+{
+	#banner h1
+	{
+		font-size: 3em;
+	}
+}
+#banner h1 a
+{
+	width: 100%;
+	height: 100%;
+	display: block;
+	text-decoration: none;
+	color: #000000;
+}
+
+
+.term
+{
+	font-style: italic;
+}
+
+.badge,
+.badge > *
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	margin: 0px;
+	height: 20px;
+	vertical-align: middle;
+	font-size: 12px;
+	white-space: nowrap;
+}
+.badge
+{
+	padding: 1px;
+	height: 22px;
+	display: inline-block;
+	background-color: #CCCCCC;
+}
+.badge img
+{
+	border-width: 1px;
+	height: 20px;
+	padding: 0px;
+}
+.badge > *
+{
+	height: 16px;
+	padding: 2px;
+	display: block;
+	background-color: #FFFFFF;
+	float: left;
+	margin-left: 1px;
+}
+.badge > *:first-child
+{
+	margin-left: 0px;
+}
+.badge .icon
+{
+	cursor: pointer;
+}
+
+hr
+{
+	border-width: 5px;
+	border-style: double;
+	border-color: #000000;
+}
+
+a
+{
+	text-decoration: inherit;
+}
+a:link:hover
+{
+	text-decoration: underline;
+}
+a img
+{
+	border: 0px;
+}
+a,
+#navigation a,
+#footer a,
+a:hover,
+a:visited,
+#banner h1 a:hover
+{
+	color: #007700;
+	text-shadow: 0px 0px 7px rgba(0, 255, 0, 0.3);
+}
+
+#breadcrumb
+{
+	width: 100%;
+	top: -70px;
+	margin: 0 10%;
+}
+h1
+{
+	text-align: center;
+}
+
+#content p
+{
+	text-align: justify;
+}
+#content h1, h2, h3, h4, h5, h6
+{
+	clear: left;
+}
+#content img
+{
+	max-width: 100%;
+}
+
+.portfolio > thead
+{
+	display: none;
+}
+.portfolio,
+.portfolio > tbody
+{
+	display: block;
+	width: 100%;
+	overflow: hidden;
+}
+.gallery-item,
+.portfolio > tbody > tr
+{
+	display: block;
+	width: 98%;
+	margin: 1%;
+	float: left;
+	overflow: hidden;
+}
+.gallery-item:last-of-type
+{
+	clear: both;
+}
+
+@media screen and (min-width: 750px)
+{
+	.gallery-item,
+	.portfolio > tbody > tr
+	{
+		width: 46%;
+		margin: 2%;
+	}
+}
+@media screen and (min-width: 1550px)
+{
+	.gallery-item,
+	.portfolio > tbody > tr
+	{
+		width: 29%;
+		margin: 2%;
+	}
+}
+@media screen and (min-width: 1850px)
+{
+	.gallery-item,
+	.portfolio > tbody > tr
+	{
+		width: 21%;
+		margin: 2%;
+	}
+}
+@media screen and (min-width: 2200px)
+{
+	.gallery-item,
+	.portfolio > tbody > tr
+	{
+		width: 18%;
+		margin: 1%;
+	}
+}
+
+.gallery-item > div,
+.portfolio > tbody > tr > td
+{
+	display: block;
+	margin: 1em 0%;
+	padding: 0px;
+	text-align: center;
+	/* Test this: https://stackoverflow.com/a/18170796 */
+    text-align: justify;
+    text-align-last: center;
+	overflow: hidden;
+}
+.gallery-item > div:nth-child(1),
+.portfolio > tbody > tr > td:nth-child(1)
+{
+	padding-top: 70%;
+	position: relative;
+}
+.gallery-item.portrait > div:nth-child(1),
+.portfolio.portrait > tbody > tr > td:nth-child(1),
+.portfolio > tbody > tr > td:nth-child(1).portrait
+{
+	padding-top: 100%;
+}
+.gallery-item.portrait > div:nth-child(1) > a,
+.portfolio.portrait > tbody > tr > td:nth-child(1) > a,
+.portfolio > tbody > tr > td:nth-child(1).portrait > a
+{
+	left: 12%;
+	right: 12%;
+}
+.gallery-item > div:nth-child(1) > a,
+.portfolio > tbody > tr > td:nth-child(1) > a
+{
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.gallery-item > div:nth-child(2),
+.portfolio > tbody > tr > td:nth-child(2)
+{
+	margin: 0.5em 0%;
+	font-family: "GreatVibesRegular", "Great Vibes", "UnPilgi", cursive;
+	font-size-adjust: 0.396;
+	font-size: 1.8em;
+	min-height: 2em;
+}
+.gallery-item > div:nth-child(3),
+.portfolio > tbody > tr > td:nth-child(3)
+{
+	margin: 0.5em 0%;
+	font-size: 0.9em;
+	font-style: italic;
+	min-height: 5em;
+}
+.portfolio > tbody > tr > td:nth-child(4)
+{
+	display: none;
+}
+.gallery-item > div:nth-child(1) > a > *,
+.portfolio > tbody > tr > td:nth-child(1) > a > *
+{
+	display: block;
+	min-height: 100%;
+	width: 100%;
+	/* This is not supported in older browsers, may need to use a transparent background-image later: */
+	background: rgba(255, 255, 255, 0.8);
+}
+.gallery-item > div:nth-child(1) > a:hover,
+.portfolio > tbody > tr > td:nth-child(1) > a:hover
+{
+	text-decoration: inherit;
+}
+.gallery-item > div:nth-child(1) > a > q,
+.portfolio > tbody > tr > td:nth-child(1) > a > q
+{
+	color: #666666;
+	height: 90%;
+	width: 90%;
+	padding: 5%;
+	text-align: justify;
+	font-size: 0.9em;
+	overflow: hidden;
+	line-height: 190%;
+	text-overflow: ellipsis;
+}
+.gallery-item > div:nth-child(1) > a > q:before,
+.gallery-item > div:nth-child(1) > a > q:after,
+.portfolio > tbody > tr > td:nth-child(1) > a > q:before,
+.portfolio > tbody > tr > td:nth-child(1) > a > q:after
+{
+	content: none;
+}
+.gallery-item > div:nth-child(1) > a > q:hover,
+.portfolio > tbody > tr > td:nth-child(1) > a > q:hover
+{
+	color: #331111;
+}
+
+.gallery-item > div:nth-child(1) > a,
+.portfolio > tbody > tr > td:nth-child(1) > a
+{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	-webkit-border-image: url("lace-frame-landscape.png") 51 31 stretch;
+	-moz-border-image: url("lace-frame-landscape.png") 51 31 fill stretch;
+	-o-border-image: url("lace-frame-landscape.png") 51 31 stretch;
+	border-image: url("lace-frame-landscape.png") 51 31 fill stretch;
+}
+.gallery-item.portrait > div:nth-child(1) > a,
+.portfolio.portrait > tbody > tr > td:nth-child(1) > a,
+.portfolio > tbody > tr > td:nth-child(1).portrait > a
+{
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	-webkit-border-image: url("lace-frame-portrait.png") 31 51 /*fill*/ stretch; /* Webkit seems to fill by default */
+	-moz-border-image: url("lace-frame-portrait.png") 31 51 fill stretch; /* Old Firefox */
+	-o-border-image: url("lace-frame-portrait.png") 31 51 /*fill*/ stretch; /* Opera seems to fill by default */
+	border-image: url("lace-frame-portrait.png") 31 51 fill stretch;
+}
+
+.gallery-item > div:nth-child(1) > a > *.gallery-emoji,
+.gallery-emoji
+{
+	font-size: 8.5em;
+	text-shadow: 0 0 0 rgba(0,0,0,0);
+	background: rgba(255, 255, 255, 0);
+	
+	width: 100%;
+	
+	position: absolute;
+	top: 50%;
+	/* If I needed a height for this element, I could use the negative margin trick to vertically centre contents:
+	   https://www.w3docs.com/snippets/css/how-to-vertically-center-text-with-css.html
+	top: 100%;
+	margin-top: -31%;*/ /* 35% is half of 70% which is the padding-top of a parent element used for aspect ratio of the gallery items */
+	/* Refer to http://mattsnider.com/css-using-percent-for-margin-and-padding/ on more information on this */
+	
+	height: 0;
+	min-height: 0;
+	line-height: 0;
+	overflow: visible;
+}
+
+@media screen and (min-width: 650px) and (max-width: 750px)
+{
+	.portfolio > tbody > tr > td:nth-child(1) > a
+	{
+		border-width: 35px;
+	}
+}
+@media screen and (max-width: 420px)
+{
+	.portfolio > tbody > tr > td:nth-child(1) > a
+	{
+		border-width: 20px;
+	}
+}
+@media screen and (max-width: 350px)
+{
+	.portfolio > tbody > tr > td:nth-child(1) > a
+	{
+		border-width: 15px;
+	}
+}
+@media screen and (max-width: 250px)
+{
+	.portfolio > tbody > tr > td:nth-child(1) > a
+	{
+		border-width: 9px;
+	}
+}
+
+.family-members
+{
+	overflow: hidden;
+}
+.family-members > div > h1,
+.family-members > div > h2,
+.family-members > div > h3,
+.family-members > div > h4,
+.family-members > div > h5,
+.family-members > div > h6
+{
+	text-align: center;
+}
+.explanation,
+.family-members > div > p
+{
+	text-align: justify;
+	line-height: 175%;
+	padding-bottom: 2.75em;
+}
+.explanation
+{
+	font-style: italic;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+.family-members > div > h4
+{
+	font-weight: normal;
+	color: #666666;
+}
+@media screen and (min-width: 650px)
+{
+	.family-members > div
+	{
+		float: left;
+		padding: 2%;
+		width: 46%;
+	}
+}
+#content > h1,
+.family-members > h2:first-of-type
+{
+	display: none;
+}
+
+/* Browser-specific adjustments and fallbacks for non-standard-compliant browsers... */
+.ie-warning
+{
+	padding: 20px;
+	margin: 40px;
+	background-color: #FFFFFF;
+	text-align: center;
+}
+
+/* Internet Explorer can't handle CSS3 border-images, so use a boring red frame border instead */
+html.ie10,
+html.lt-ie10
+{
+	border: 0px;
+}
+html.ie10 > body,
+html.lt-ie10 > body
+{
+	padding-top: 266px;
+	padding-bottom: 266px;
+	background-color: transparent;
+	background-repeat: repeat;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wUHBSoFY0FJ3wAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAANSURBVAjXY/j//389AAl7A30XiFXFAAAAAElFTkSuQmCC);
+	/* The background above is equivalent to this, which is not supported in older browsers:
+	background: rgba(255, 255, 255, 0.5); */
+}
+html.ie10 > body > div,
+html.lt-ie10 > body > div
+{
+	margin-left: 10%;
+	margin-right: 10%;
+}
+/* Internet Explorer 10 can't handle CSS3 border-images, so use a boring red frame border instead */
+.ie-warning,
+html.ie10 > body,
+html.ie10 .portfolio > tbody > tr > td:nth-child(1) > a
+{
+	border-width: 10px;
+	border-style: ridge;
+	border-color: #CC6666;
+}
+
+/* Badly attempting to correct the horrible mess that Internet Explorer 9 and below seems to make... */
+html.lt-ie10 .portfolio > tbody > tr > td:nth-child(1) > a
+{
+	width: 300px;
+	height: 200px;
+	position: static;
+}
+

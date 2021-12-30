@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+{% if page %}
+{% set this = page %}
+{% endif %}
+{% if section %}
+{% set this = section %}
+{% endif %}
+{% set index_section = get_section(path="_index.md") %}
+
+<!--[if lt IE 7]><html class="lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en-AU" dir="ltr"><![endif]-->
+<!--[if IE 7]><html class="lt-ie10 lt-ie9 lt-ie8" lang="en-AU" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie10 lt-ie9" lang="en-AU" dir="ltr"><![endif]-->
+<!--[if IE 9]><html class="lt-ie10 lt-ie9" lang="en-AU" dir="ltr"><![endif]-->
+<!--[if gt IE 9]><!--><html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-AU"><!--<![endif]-->
+	
+	<head profile="http://gmpg.org/xfn/11">
+		
+        <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+		
+		<!-- MetaData -->
+		<meta name="author"      content="Timothy Diamond Lawrence" />
+{% if this.date %}
+		<meta name="created"     content="{{ this.date }}" />
+{% endif %}
+		<meta name="keywords"    content="Diamond Lawrence, website portfolio, panmutualism, panarchism, mutualism, environmentalism, transparency, philanthrophy, panarchy, manifesto" />
+		<meta name="description" content="{{this.description}}" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<!-- StyleSheets -->
+        <link rel="stylesheet" type="text/css" href="{{ get_url(path="style.css") }}"  media="screen" />
+		
+		{% if config.generate_rss %}
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml") }}">
+		{% endif %}
+		
+		{% block extra_head %}
+		{% endblock extra_head %}
+		
+	</head>
+	
+	
+	<body lang="en-AU" dir="ltr">
+		
+		{% block banner %}
+		<!-- ==================== Banner ==================== -->
+		<div id="banner">
+			
+			{% if index_section %}
+			<h1><a href="{{ index_section.permalink }}">{{ index_section.title }}</a></h1>
+			{% endif %}
+			
+		</div>
+		{% endblock banner %}
+		
+		<!-- ================== Navigation ================== -->
+		{% block navigation %}
+			{% if index_section and index_section.subsections | length > 1 %}
+		<div id="navigation">
+			
+			<ul>
+            {% for nav_path in index_section.subsections %}
+				{% set nav_section = get_section(path=nav_path) %}
+				{% if nav_section %}
+				{% if nav_section.extra and nav_section.extra.draft and nav_section.extra.draft == true %}
+				{% else %}
+					{% if nav_section == this %}
+					<li>{{ nav_section.title }}</li>
+					{% else %}
+					<li><a href="{{ nav_section.permalink }}">{{ nav_section.title }}</a></li>
+					{% endif %}
+				{% endif %}
+				{% endif %}
+            {% endfor %}
+			</ul>
+		</div>
+			{% endif %}
+			{% if this %}
+				{% if this == index_section %}
+		       	{% else %}
+         <div id="breadcrumb">
+					
+		        {% for ancestor in this.ancestors %}
+					{% set ancestor_section = get_section(path=ancestor) %}
+					{% if ancestor_section %}
+						{% if ancestor_section == index_section %}
+				       	{% else %}
+				          &rarr; <a href="{{ ancestor_section.permalink }}">{{ ancestor_section.title }}</a>
+						{% endif %}
+					{% endif %}
+		        {% endfor %}
+
+					&rarr; {{ this.title }}
+		</div>
+				{% endif %}
+
+			{% endif %}
+		{% endblock navigation %}
+		
+		{% block content %}
+		<div id="content">
+			
+			<!-- ===================== Page ===================== -->
+			<div class="post">
+				
+				{% if page and this.title %}
+				<h1 class="post-title">{{ this.title }}</h1>
+				{% endif %}
+				
+				{{ this.content | safe }}
+			</div>
+		</div>
+		{% endblock content %}
+
+
+		
+
+		<!-- ===================== Next ===================== -->
+		{% block next_pages %}
+		<div id="next_pages">
+			
+			{% if section and section.pages | length > 1 %}
+			<table class="portfolio">
+				<thead>
+					<tr>
+						<th>Image</th>
+						<th>Title</th>
+						<th>Developer</th>
+						<th>Work involved</th>
+					</tr>
+				</thead>
+				<tbody>
+                {% for subsection in section.pages %}
+					
+					<tr>
+					{% if subsection.extra.picture %}
+						<td {% if subsection.extra.picture_class %}class="{{ subsection.extra.picture_class }}"{% endif %}><a href="{{ subsection.permalink }}"><img src="{{ get_url(path=subsection.extra.picture) }}" alt="{{ subsection.title }}"/></a></td>
+					{% else %}
+						<td><a href="{{ subsection.permalink }}"><q>{{subsection.description}}</q></a></td>
+					{% endif %}
+						<td><a href="{{ subsection.permalink }}">{{ subsection.title }}</a></td>
+						<td>{{subsection.description}}</td>
+						<td>{{subsection.description}}</td>
+					</tr>
+                {% endfor %}
+
+
+				</tbody>
+			</table>
+			{% else %}
+			<!-- No child pages found -->
+			{% endif %}
+				
+			{% if section and section.subsections | length > 1 %}
+			<table class="portfolio">
+				<thead>
+					<tr>
+						<th>Image</th>
+						<th>Title</th>
+						<th>Developer</th>
+						<th>Work involved</th>
+					</tr>
+				</thead>
+				<tbody>
+                {% for subsection_path in section.subsections %}
+				{% set subsection = get_section(path=subsection_path) %}
+				{% if subsection %}
+					
+					<tr>
+					{% if subsection.extra.picture %}
+						<td {% if subsection.extra.picture_class %}class="{{ subsection.extra.picture_class }}"{% endif %}><a href="{{ subsection.permalink }}"><img src="{{ get_url(path=subsection.extra.picture) }}" alt="{{ subsection.title }}"/></a></td>
+					{% else %}
+						<td><a href="{{ subsection.permalink }}"><q>{{subsection.description}}</q></a></td>
+					{% endif %}
+						<td><a href="{{ subsection.permalink }}">{{ subsection.title }}</a></td>
+						<td>{{subsection.description}}</td>
+						<td>{{subsection.description}}</td>
+					</tr>
+				{% endif %}
+                {% endfor %}
+
+
+				</tbody>
+			</table>
+			{% else %}
+			<!-- No subsections found -->
+			{% endif %}
+				
+			
+		</div>
+		{% endblock next_pages %}
+
+		
+		<div id="footer">
+			
+			<!-- ==================== Footer ==================== -->
+			<ul>
+				<li>
+					<a href="http://validator.w3.org/check?uri=referer">
+						<img class="validation-icon" src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict"  title="{{ config.base_url }} uses Extensible HyperText Markup Language compliant to the World Wide Web Consortium's XHTML 1.0 Strict standards, thus promoting open source standards and interoperability." />
+					</a>
+				</li>
+				<li>
+					Website design by <strong>Timotheos Firestone</strong>.
+				</li>
+				<li>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer">
+						<img class="validation-icon" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS" title="{{ config.base_url }} uses Cascading Style Sheets compliant to the World Wide Web Consortium's CSS 3 standards, thus promoting open source standards and interoperability." />
+					</a>
+				</li>
+			</ul>
+			
+		</div>
+		
+	</body>
+	
+</html>

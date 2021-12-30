@@ -1,0 +1,7 @@
+base_url = "http://firestone.eco"
+title = "Timotheos Firestone"
+description = "The personal website of Timotheos Firestone"
+
+default_language = "en"
+
+compile_sass = true

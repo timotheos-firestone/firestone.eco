@@ -1,0 +1,12 @@
+{% extends "section.html" %}
+
+		{% block banner %}
+		<div id="banner" class="index">
+			
+			<!-- ==================== Banner ==================== -->
+			{% if index_section %}
+			<h1><a href="{{ index_section.permalink }}">{{ index_section.title }}</a></h1>
+			{% endif %}
+			
+		</div>
+		{% endblock banner %}
