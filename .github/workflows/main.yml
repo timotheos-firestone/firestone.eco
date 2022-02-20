@@ -21,7 +21,6 @@ jobs:
       - name: build_and_deploy
         uses: shalzz/zola-deploy-action@v0.14.1
         env:
-          REPOSITORY: timotheos-firestone/timotheos-firestone.github.io
           TOKEN: $GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PAGES_BRANCH: gh-pages
