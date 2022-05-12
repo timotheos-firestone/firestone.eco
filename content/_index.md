@@ -32,23 +32,23 @@ I enjoy spending time in nature, especially rainforests and beaches. Hiking, cli
 Creative outlets such as crafts, arts, drawing, jewellery-making, welding, blacksmithing, photography and painting.
 {% end %}
 
-{% gallery_item(title="Writing and Literature", emoji="📚") %}
+{% gallery_item(title="Writing and Literature", picture="Medusa poem.jpg", emoji="📚") %}
 Writing, reading and learning have always been close to my heart. I am writing a novel, plus poetry, prose and essays.
 {% end %}
 
-{% gallery_item(title="Personism", emoji="🙆") %}
+{% gallery_item(title="Personism", picture="personism.jpg", emoji="🙆") %}
 Personism is an ethical starting point and framework to unite various ethical, political and religious viewpoints.
 {% end %}
 
-{% gallery_item(title="Panmutualism", emoji="⚖️") %}
+{% gallery_item(title="Panmutualism", picture="panmutualism.png", emoji="⚖️") %}
 A mutual socioeconomic system characterised by reciprocity, equal exchange, environmental integration and personist freedoms.
 {% end %}
 
-{% gallery_item(title="Games development", emoji="🎮") %}
+{% gallery_item(title="Games development", picture="dembi.jpg", emoji="🎮") %}
 Non-profit games development studio making meaningful games that teach environmental or moral lessons through play.
 {% end %}
 
-{% gallery_item(title="Open collaboration", emoji="🌐") %}
+{% gallery_item(title="Open collaboration", picture="Echo code.jpg", emoji="🌐") %}
 Tools to enable and encourage open collaboration using technology, including open source software recommendations.
 {% end %}
 
@@ -56,16 +56,16 @@ Tools to enable and encourage open collaboration using technology, including ope
 Mobility and freedom of the human body (parkour, calisthenics, climbing, bouldering, exploration, weights).
 {% end %}
 
-{% gallery_item(title="Living Guides", emoji="🌏") %}
+{% gallery_item(title="Living Guides", picture="vegan salad.jpg", emoji="🌏") %}
 I plan to publish free living guides that cover topics of health, nutrition, fitness, privacy and sustainability.
 {% end %}
 
-{% gallery_item(title="Polyfidelity", emoji="👩‍👩‍👧") %}
-Rethinking human living spaces and relationship structures instead of taking society's default. Polyfidelity suits me personally.
+{% gallery_item(title="Polyfidelity", picture="tiny home community concept.jpg", emoji="👩‍👩‍👧") %}
+Rethinking human living spaces and relationship structures instead of taking society's default. Polyfidelity is one such option.
 {% end %}
 
-{% gallery_item(title="Inspirations", emoji="🎶") %}
-Soon I will make a page with art and media that has inspired me. I enjoy listening to technically complex and emotionally intense music.
+{% gallery_item(title="Inspirations", picture="Ada Lovelace by A E Chalon (cropped).jpg", emoji="🎶") %}
+Persons, art and media that have inspired me. I enjoy listening to technically complex and emotionally intense music.
 {% end %}
 
 {{ gallery_end() }}
