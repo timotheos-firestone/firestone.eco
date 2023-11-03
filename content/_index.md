@@ -13,7 +13,7 @@ My name is **Timotheos**. I am passionate about ethical social systems, holistic
 
 <!-- more -->
 
-I currently work as a video games developer with a for-profit company, which I'm hoping to transition away from in 2022. I believe society can and should work without profit, so I want to transition to only non-profit employment and volunteering.
+I currently work as a video games developer with a for-profit company, which I'm hoping to transition away from soon. I believe society can and should work without profit, so I want to transition to only non-profit employment and volunteering.
 
 My main project is [Firestone Sanctuary](http://sanctuary.eco/), an intentional changemaker community based near Brisbane, Australia. Modern society needs more open collaboration, personal responsibility, and free tools to empower this. The Sanctuary is a launchpad for these ideas and many sub-projects.
 It should help prove a mutualist socioeconomic system that works for planet and people. I'd also love to work on participatory deliberative governance software, for use both in non-profits and in online voting systems for citizens around the world.
