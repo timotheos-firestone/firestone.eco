@@ -53,7 +53,7 @@ Tools to enable and encourage open collaboration using technology, including ope
 {% end %}
 
 {% gallery_item(title="Explorative fitness", picture="Timotheos climbing between rocks.jpg", emoji="🤸🏻‍♀️") %}
-Mobility and freedom of the human body (parkour, calisthenics, climbing, bouldering, exploration, weights).
+Mobility and freedom of the human body (parkour, callisthenics, climbing, bouldering, exploration, weights).
 {% end %}
 
 {% gallery_item(title="Living Guides", picture="vegan salad.jpg", emoji="🌏") %}
