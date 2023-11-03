@@ -60,7 +60,7 @@ Mobility and freedom of the human body (parkour, calisthenics, climbing, boulder
 I plan to publish free living guides that cover topics of health, nutrition, fitness, privacy and sustainability.
 {% end %}
 
-{% gallery_item(title="Polyfidelity", picture="tiny home community concept.jpg", emoji="👩‍👩‍👧") %}
+{% gallery_item(title="Relationships", picture="tiny home community concept.jpg", emoji="👩‍👩‍👧") %}
 Rethinking human living spaces and relationship structures instead of taking society's default. Polyfidelity is one such option.
 {% end %}
 
