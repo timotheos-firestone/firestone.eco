@@ -1,13 +1,15 @@
 # This GitHub Actions workflow adapted from https://www.getzola.org/documentation/deployment/github-pages/
+# as well as https://github.com/shalzz/zola-deploy-action
+
 name: Build and deploy Zola website for GitHub Pages
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # Triggers the workflow on push (but only for the main branch) or pull request events
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -15,16 +17,38 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/main'
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           set-safe-directory: '*'
-      - name: build_and_deploy
-        uses: shalzz/zola-deploy-action@v0.17.2
+      - name: Build only
+        uses: shalzz/zola-deploy-action@v0.18.0
+        with:
+          set-safe-directory: '*'
         env:
-          TOKEN: $GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}
+          BUILD_DIR: .
+          BUILD_ONLY: true
+          BUILD_FLAGS: --drafts
+          BUILD_THEMES: false
+  
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          set-safe-directory: '*'
+      - name: Build and deploy
+        uses: shalzz/zola-deploy-action@v0.18.0
+        with:
+          set-safe-directory: '*'
+        env:
+          #TOKEN: $GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PAGES_BRANCH: gh-pages
           BUILD_DIR: .
           BUILD_THEMES: false
+
