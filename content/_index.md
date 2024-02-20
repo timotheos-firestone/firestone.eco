@@ -61,7 +61,7 @@ I plan to publish free living guides that cover topics of health, nutrition, fit
 {% end %}
 
 {% gallery_item(title="Relationships", picture="tiny home community concept.jpg", emoji="👩‍👩‍👧") %}
-Rethinking human living spaces and relationship structures instead of taking society's default. Polyfidelity is one such option.
+Rethinking human living spaces and relationship structures instead of taking society's default. Coparenting, romance and other topics.
 {% end %}
 
 {% gallery_item(title="Inspirations", picture="Ada Lovelace by A E Chalon (cropped).jpg", emoji="🎶") %}
